@@ -108,3 +108,37 @@ df_final = df.merge(
 # Export final dataset to Excel
 df_final.to_excel('EcommerceDashboardData.xlsx', index=False)
 
+
+----- result of RFM 
+
+(1033036, 9)
+<class 'pandas.DataFrame'>
+RangeIndex: 1033036 entries, 0 to 1033035
+Data columns (total 9 columns):
+ #   Column       Non-Null Count    Dtype         
+---  ------       --------------    -----         
+ 0   invoice      1033036 non-null  object        
+ 1   stockcode    1033036 non-null  str           
+ 2   description  1028761 non-null  str           
+ 3   quantity     1033036 non-null  int64         
+ 4   invoicedate  1033036 non-null  datetime64[ns]
+ 5   price        1033036 non-null  float64       
+ 6   customer_id  797885 non-null   float64       
+ 7   country      1033036 non-null  str           
+ 8   Sourcecode   1033036 non-null  str           
+dtypes: datetime64[ns](1), float64(2), int64(1), object(1), str(4)
+
+   customer_id  Recency  Frequency  Monetary  R_Score  F_Score  M_Score  \
+0      12346.0      325         12  77556.46        2        5        5   
+1      12347.0        2          8   4921.53        5        4        5   
+2      12348.0       75          5   2019.40        3        4        4   
+3      12349.0       18          4   4428.69        5        3        5   
+4      12350.0      310          1    334.40        2        1        2   
+
+           Segment  IsChurned  
+0          At Risk       True  
+1        Champions      False  
+2  Loyal Customers      False  
+3  Loyal Customers      False  
+4   Lost Customers       True  
+
